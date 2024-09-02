@@ -1,0 +1,634 @@
+CRITICAL - 2024-09-01 00:02:43 --> Error: Class "App\Models\Inventory\ItemAssignmentsModel" not found
+[Method: GET, Route: inventory/assignments]
+in APPPATH\Controllers\Inventory\ItemAssignmentController.php on line 15.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->index()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2024-09-01 00:03:51 --> mysqli_sql_exception: Unknown column 'user_tbl.id' in 'on clause' in C:\xampp\htdocs\crud\system\Database\MySQLi\Connection.php:312
+Stack trace:
+#0 C:\xampp\htdocs\crud\system\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `inv_ite...', 0)
+#1 C:\xampp\htdocs\crud\system\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inv_ite...')
+#2 C:\xampp\htdocs\crud\system\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inv_ite...')
+#3 C:\xampp\htdocs\crud\system\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `inv_ite...', Array, false)
+#4 C:\xampp\htdocs\crud\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\crud\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\crud\app\Models\Inventory\ItemAssignmentsModel.php(22): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\crud\app\Controllers\Inventory\ItemAssignmentController.php(17): App\Models\Inventory\ItemAssignmentsModel->getItemAndUser()
+#8 C:\xampp\htdocs\crud\system\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->index()
+#9 C:\xampp\htdocs\crud\system\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+#10 C:\xampp\htdocs\crud\system\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\crud\system\Boot.php(325): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\crud\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\crud\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2024-09-01 00:03:51 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'user_tbl.id' in 'on clause'
+[Method: GET, Route: inventory/assignments]
+in SYSTEMPATH\Database\BaseConnection.php on line 688.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `inv_items`.`name` as `item_name`, `user_tbl`.`LastName` as `last_name`, `user_tbl`.`FirstName` as `first_name`
+FROM `inv_item_assignments`
+JOIN `inv_items` ON `inv_items`.`id` = `inv_item_assignments`.`item_id`
+JOIN `user_tbl` ON `user_tbl`.`id` = `inv_item_assignments`.`user_id`', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Models\Inventory\ItemAssignmentsModel.php(22): CodeIgniter\BaseModel->findAll()
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(17): App\Models\Inventory\ItemAssignmentsModel->getItemAndUser()
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-09-01 00:03:51 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'user_tbl.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 317.
+ 1 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inv_items`.`name` as `item_name`, `user_tbl`.`LastName` as `last_name`, `user_tbl`.`FirstName` as `first_name`
+FROM `inv_item_assignments`
+JOIN `inv_items` ON `inv_items`.`id` = `inv_item_assignments`.`item_id`
+JOIN `user_tbl` ON `user_tbl`.`id` = `inv_item_assignments`.`user_id`')
+ 2 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inv_items`.`name` as `item_name`, `user_tbl`.`LastName` as `last_name`, `user_tbl`.`FirstName` as `first_name`
+FROM `inv_item_assignments`
+JOIN `inv_items` ON `inv_items`.`id` = `inv_item_assignments`.`item_id`
+JOIN `user_tbl` ON `user_tbl`.`id` = `inv_item_assignments`.`user_id`')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `inv_items`.`name` as `item_name`, `user_tbl`.`LastName` as `last_name`, `user_tbl`.`FirstName` as `first_name`
+FROM `inv_item_assignments`
+JOIN `inv_items` ON `inv_items`.`id` = `inv_item_assignments`.`item_id`
+JOIN `user_tbl` ON `user_tbl`.`id` = `inv_item_assignments`.`user_id`', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Models\Inventory\ItemAssignmentsModel.php(22): CodeIgniter\BaseModel->findAll()
+ 7 APPPATH\Controllers\Inventory\ItemAssignmentController.php(17): App\Models\Inventory\ItemAssignmentsModel->getItemAndUser()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->index()
+ 9 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+10 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-09-01 00:03:51 --> [Caused by] mysqli_sql_exception: Unknown column 'user_tbl.id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 312.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(312): mysqli->query('SELECT `inv_items`.`name` as `item_name`, `user_tbl`.`LastName` as `last_name`, `user_tbl`.`FirstName` as `first_name`
+FROM `inv_item_assignments`
+JOIN `inv_items` ON `inv_items`.`id` = `inv_item_assignments`.`item_id`
+JOIN `user_tbl` ON `user_tbl`.`id` = `inv_item_assignments`.`user_id`', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(734): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `inv_items`.`name` as `item_name`, `user_tbl`.`LastName` as `last_name`, `user_tbl`.`FirstName` as `first_name`
+FROM `inv_item_assignments`
+JOIN `inv_items` ON `inv_items`.`id` = `inv_item_assignments`.`item_id`
+JOIN `user_tbl` ON `user_tbl`.`id` = `inv_item_assignments`.`user_id`')
+ 3 SYSTEMPATH\Database\BaseConnection.php(648): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `inv_items`.`name` as `item_name`, `user_tbl`.`LastName` as `last_name`, `user_tbl`.`FirstName` as `first_name`
+FROM `inv_item_assignments`
+JOIN `inv_items` ON `inv_items`.`id` = `inv_item_assignments`.`item_id`
+JOIN `user_tbl` ON `user_tbl`.`id` = `inv_item_assignments`.`user_id`')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1644): CodeIgniter\Database\BaseConnection->query('SELECT `inv_items`.`name` as `item_name`, `user_tbl`.`LastName` as `last_name`, `user_tbl`.`FirstName` as `first_name`
+FROM `inv_item_assignments`
+JOIN `inv_items` ON `inv_items`.`id` = `inv_item_assignments`.`item_id`
+JOIN `user_tbl` ON `user_tbl`.`id` = `inv_item_assignments`.`user_id`', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\Inventory\ItemAssignmentsModel.php(22): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\Inventory\ItemAssignmentController.php(17): App\Models\Inventory\ItemAssignmentsModel->getItemAndUser()
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->index()
+10 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+11 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:04:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:04:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:05:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:05:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:05:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:06:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:06:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:06:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:06:12 --> Error: Class "App\Controllers\Inventory\InvCategoriesModel" not found
+[Method: GET, Route: inventory/assignments/add]
+in APPPATH\Controllers\Inventory\ItemAssignmentController.php on line 31.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:06:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:06:32 --> BadMethodCallException: Call to undefined method App\Models\Inventory\InvItemsModel::getAllCategories
+[Method: GET, Route: inventory/assignments/add]
+in SYSTEMPATH\Model.php on line 932.
+ 1 APPPATH\Controllers\Inventory\ItemAssignmentController.php(32): CodeIgniter\Model->__call('getAllCategories', [])
+ 2 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 3 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 4 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 6 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 7 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:07:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:13:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:14:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:14:13 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "inventory/assignments/add.php"
+[Method: GET, Route: inventory/assignments/add]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('inventory/assignments/add.php')
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/assignments/add', [], true)
+ 3 APPPATH\Controllers\Inventory\ItemAssignmentController.php(62): view('inventory/assignments/add', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:14:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:14:26 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "inventory/item-assignments/add.php"
+[Method: GET, Route: inventory/assignments/add]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('inventory/item-assignments/add.php')
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignments/add', [], true)
+ 3 APPPATH\Controllers\Inventory\ItemAssignmentController.php(62): view('inventory/item-assignments/add', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:14:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:14:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:15:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:16:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:24:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:24:53 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: inventory/assignments/add]
+in APPPATH\Views\inventory\item-assignment\add.php on line 36.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/add', [], true)
+ 4 APPPATH\Controllers\Inventory\ItemAssignmentController.php(64): view('inventory/item-assignment/add', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:25:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:25:16 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: inventory/assignments/add]
+in APPPATH\Views\inventory\item-assignment\add.php on line 37.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/add', [], true)
+ 4 APPPATH\Controllers\Inventory\ItemAssignmentController.php(64): view('inventory/item-assignment/add', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:26:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:26:13 --> ErrorException: Attempt to read property "id" on array
+[Method: GET, Route: inventory/assignments/add]
+in APPPATH\Views\inventory\item-assignment\add.php on line 21.
+ 1 APPPATH\Views\inventory\item-assignment\add.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php', 21)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/add', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(64): view('inventory/item-assignment/add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:26:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:26:45 --> ErrorException: Attempt to read property "item_id" on array
+[Method: GET, Route: inventory/assignments/add]
+in APPPATH\Views\inventory\item-assignment\add.php on line 21.
+ 1 APPPATH\Views\inventory\item-assignment\add.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "item_id" on array', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php', 21)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/add', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(64): view('inventory/item-assignment/add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:28:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:28:22 --> ErrorException: Attempt to read property "item_id" on array
+[Method: GET, Route: inventory/assignments/add]
+in APPPATH\Views\inventory\item-assignment\add.php on line 21.
+ 1 APPPATH\Views\inventory\item-assignment\add.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "item_id" on array', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php', 21)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/add', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(64): view('inventory/item-assignment/add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:28:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:28:39 --> ErrorException: Attempt to read property "item_id" on array
+[Method: GET, Route: inventory/assignments/add]
+in APPPATH\Views\inventory\item-assignment\add.php on line 21.
+ 1 APPPATH\Views\inventory\item-assignment\add.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "item_id" on array', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php', 21)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/add', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(64): view('inventory/item-assignment/add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:30:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:30:24 --> ErrorException: Attempt to read property "item_id" on array
+[Method: GET, Route: inventory/assignments/add]
+in APPPATH\Views\inventory\item-assignment\add.php on line 21.
+ 1 APPPATH\Views\inventory\item-assignment\add.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "item_id" on array', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php', 21)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/add', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(62): view('inventory/item-assignment/add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:30:54 --> ErrorException: Attempt to read property "id" on array
+[Method: GET, Route: inventory/assignments/add]
+in APPPATH\Views\inventory\item-assignment\add.php on line 21.
+ 1 APPPATH\Views\inventory\item-assignment\add.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php', 21)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/add', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(62): view('inventory/item-assignment/add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:31:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:32:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:32:53 --> ErrorException: Undefined property: stdClass::$UserId
+[Method: GET, Route: inventory/assignments/add]
+in APPPATH\Views\inventory\item-assignment\add.php on line 23.
+ 1 APPPATH\Views\inventory\item-assignment\add.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined property: stdClass::$UserId', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php', 23)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/add', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(63): view('inventory/item-assignment/add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:34:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:34:08 --> ErrorException: Attempt to read property "id" on array
+[Method: GET, Route: inventory/assignments/add]
+in APPPATH\Views\inventory\item-assignment\add.php on line 21.
+ 1 APPPATH\Views\inventory\item-assignment\add.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php', 21)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/add', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(63): view('inventory/item-assignment/add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:34:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:35:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:35:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:35:30 --> ErrorException: Attempt to read property "id" on array
+[Method: GET, Route: inventory/assignments/add]
+in APPPATH\Views\inventory\item-assignment\add.php on line 21.
+ 1 APPPATH\Views\inventory\item-assignment\add.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php', 21)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/add', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(63): view('inventory/item-assignment/add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:36:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:36:58 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: inventory/assignments/add]
+in APPPATH\Views\inventory\item-assignment\add.php on line 36.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/add', [], true)
+ 4 APPPATH\Controllers\Inventory\ItemAssignmentController.php(63): view('inventory/item-assignment/add', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:37:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:38:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:38:18 --> Error: Cannot use object of type stdClass as array
+[Method: GET, Route: inventory/assignments/add]
+in APPPATH\Views\inventory\item-assignment\add.php on line 36.
+ 1 SYSTEMPATH\View\View.php(234): include()
+ 2 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/add', [], true)
+ 4 APPPATH\Controllers\Inventory\ItemAssignmentController.php(63): view('inventory/item-assignment/add', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 6 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 7 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:39:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:39:19 --> ErrorException: Attempt to read property "id" on array
+[Method: GET, Route: inventory/assignments/add]
+in APPPATH\Views\inventory\item-assignment\add.php on line 21.
+ 1 APPPATH\Views\inventory\item-assignment\add.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php', 21)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\add.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/add', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(63): view('inventory/item-assignment/add', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->add()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:39:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:43:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:43:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:43:10 --> ErrorException: Undefined array key "first_ name"
+[Method: GET, Route: inventory/assignments]
+in APPPATH\Views\inventory\item-assignment\index.php on line 29.
+ 1 APPPATH\Views\inventory\item-assignment\index.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "first_ name"', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\index.php', 29)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/index', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(20): view('inventory/item-assignment/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-09-01 00:43:45 --> ErrorException: Undefined array key "description"
+[Method: GET, Route: inventory/assignments]
+in APPPATH\Views\inventory\item-assignment\index.php on line 30.
+ 1 APPPATH\Views\inventory\item-assignment\index.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "description"', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\index.php', 30)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/index', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(20): view('inventory/item-assignment/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-09-01 00:44:21 --> ErrorException: Undefined array key "first_name, lastname"
+[Method: GET, Route: inventory/assignments]
+in APPPATH\Views\inventory\item-assignment\index.php on line 29.
+ 1 APPPATH\Views\inventory\item-assignment\index.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "first_name, lastname"', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\index.php', 29)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/index', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(20): view('inventory/item-assignment/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-09-01 00:44:44 --> ErrorException: Undefined array key "description"
+[Method: GET, Route: inventory/assignments]
+in APPPATH\Views\inventory\item-assignment\index.php on line 30.
+ 1 APPPATH\Views\inventory\item-assignment\index.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "description"', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\index.php', 30)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/index', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(20): view('inventory/item-assignment/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-09-01 00:45:19 --> ErrorException: Undefined array key "serial_number"
+[Method: GET, Route: inventory/assignments]
+in APPPATH\Views\inventory\item-assignment\index.php on line 30.
+ 1 APPPATH\Views\inventory\item-assignment\index.php(30): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "serial_number"', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\index.php', 30)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/index', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(20): view('inventory/item-assignment/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-09-01 00:46:31 --> ErrorException: Undefined array key "assigned_at"
+[Method: GET, Route: inventory/assignments]
+in APPPATH\Views\inventory\item-assignment\index.php on line 31.
+ 1 APPPATH\Views\inventory\item-assignment\index.php(31): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "assigned_at"', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\index.php', 31)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/index', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(20): view('inventory/item-assignment/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-09-01 00:49:30 --> TypeError: CodeIgniter\Database\BaseBuilder::select(): Argument #2 ($escape) must be of type ?bool, string given, called in C:\xampp\htdocs\crud\system\Model.php on line 930
+[Method: GET, Route: inventory/assignments]
+in SYSTEMPATH\Database\BaseBuilder.php on line 398.
+ 1 SYSTEMPATH\Model.php(930): CodeIgniter\Database\BaseBuilder->select('inv_items.name as item_name, user_tbl.LastName as last_name, user_tbl.FirstName as first_name', 'inv_item_assignments.*')
+ 2 APPPATH\Models\Inventory\ItemAssignmentsModel.php(19): CodeIgniter\Model->__call('select', [...])
+ 3 APPPATH\Controllers\Inventory\ItemAssignmentController.php(18): App\Models\Inventory\ItemAssignmentsModel->getItemAndUser()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-09-01 00:49:58 --> TypeError: CodeIgniter\Database\BaseBuilder::select(): Argument #2 ($escape) must be of type ?bool, string given, called in C:\xampp\htdocs\crud\system\Model.php on line 930
+[Method: GET, Route: inventory/assignments]
+in SYSTEMPATH\Database\BaseBuilder.php on line 398.
+ 1 SYSTEMPATH\Model.php(930): CodeIgniter\Database\BaseBuilder->select('inv_items.name as item_name, user_tbl.LastName as last_name, user_tbl.FirstName as first_name', 'inv_item_assignments.serial_number', 'inv_item_assignments.assigned_at')
+ 2 APPPATH\Models\Inventory\ItemAssignmentsModel.php(19): CodeIgniter\Model->__call('select', [...])
+ 3 APPPATH\Controllers\Inventory\ItemAssignmentController.php(18): App\Models\Inventory\ItemAssignmentsModel->getItemAndUser()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-09-01 00:50:45 --> ErrorException: Undefined array key "status"
+[Method: GET, Route: inventory/assignments]
+in APPPATH\Views\inventory\item-assignment\index.php on line 32.
+ 1 APPPATH\Views\inventory\item-assignment\index.php(32): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "status"', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\index.php', 32)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/index', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(20): view('inventory/item-assignment/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-09-01 00:50:58 --> TypeError: CodeIgniter\Database\BaseBuilder::select(): Argument #2 ($escape) must be of type ?bool, string given, called in C:\xampp\htdocs\crud\system\Model.php on line 930
+[Method: GET, Route: inventory/assignments]
+in SYSTEMPATH\Database\BaseBuilder.php on line 398.
+ 1 SYSTEMPATH\Model.php(930): CodeIgniter\Database\BaseBuilder->select('inv_items.name as item_name, user_tbl.LastName as last_name, user_tbl.FirstName as first_name, inv_item_assignments.serial_number, inv_item_assignments.assigned_at', 'inv_item_assignments.status')
+ 2 APPPATH\Models\Inventory\ItemAssignmentsModel.php(19): CodeIgniter\Model->__call('select', [...])
+ 3 APPPATH\Controllers\Inventory\ItemAssignmentController.php(18): App\Models\Inventory\ItemAssignmentsModel->getItemAndUser()
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-09-01 00:51:15 --> ErrorException: Undefined array key "id"
+[Method: GET, Route: inventory/assignments]
+in APPPATH\Views\inventory\item-assignment\index.php on line 34.
+ 1 APPPATH\Views\inventory\item-assignment\index.php(34): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\index.php', 34)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\index.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/index', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(20): view('inventory/item-assignment/index', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:51:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:51:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:52:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:52:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:52:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:52:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:52:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:52:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:53:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:53:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:53:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:54:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:54:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 00:54:37 --> Error: Class "App\Controllers\Inventory\InvCategoriesModel" not found
+[Method: GET, Route: inventory/assignments/edit]
+in APPPATH\Controllers\Inventory\ItemAssignmentController.php on line 74.
+ 1 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->edit()
+ 2 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 3 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 4 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 5 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 6 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 00:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:55:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:55:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:55:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:55:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:55:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:55:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:55:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:55:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:55:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:55:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:55:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:55:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:55:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:55:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:55:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:56:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:56:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:56:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:56:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:56:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:56:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 00:56:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:02:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:02:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:02:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:02:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:02:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:02:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:02:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:02:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 01:02:59 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "inventory/assignments/edit.php"
+[Method: GET, Route: inventory/assignments/edit]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 41.
+ 1 SYSTEMPATH\View\View.php(222): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('inventory/assignments/edit.php')
+ 2 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/assignments/edit', [], true)
+ 3 APPPATH\Controllers\Inventory\ItemAssignmentController.php(126): view('inventory/assignments/edit', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->edit()
+ 5 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-09-01 01:03:18 --> ErrorException: Attempt to read property "item_id" on array
+[Method: GET, Route: inventory/assignments/edit]
+in APPPATH\Views\inventory\item-assignment\edit.php on line 23.
+ 1 APPPATH\Views\inventory\item-assignment\edit.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "item_id" on array', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\edit.php', 23)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\edit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/edit', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(126): view('inventory/item-assignment/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->edit()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2024-09-01 01:04:18 --> ErrorException: Attempt to read property "id" on array
+[Method: GET, Route: inventory/assignments/edit]
+in APPPATH\Views\inventory\item-assignment\edit.php on line 23.
+ 1 APPPATH\Views\inventory\item-assignment\edit.php(23): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read property "id" on array', 'C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\edit.php', 23)
+ 2 SYSTEMPATH\View\View.php(234): include('C:\\xampp\\htdocs\\crud\\app\\Views\\inventory\\item-assignment\\edit.php')
+ 3 SYSTEMPATH\View\View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1169): CodeIgniter\View\View->render('inventory/item-assignment/edit', [], true)
+ 5 APPPATH\Controllers\Inventory\ItemAssignmentController.php(126): view('inventory/item-assignment/edit', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Inventory\ItemAssignmentController->edit()
+ 7 SYSTEMPATH\CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Inventory\ItemAssignmentController))
+ 8 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 01:07:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:07:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:08:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2024-09-01 01:11:17 --> ParseError: syntax error, unexpected single-quoted string "status", expecting "]"
+[Method: GET, Route: inventory/assignments/edit]
+in APPPATH\Controllers\Inventory\ItemAssignmentController.php on line 98.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(296): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\crud\\app\\Controllers\\Inventory\\ItemAssignmentController.php')
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(272): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Inventory\\ItemAssignmentController')
+ 3 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Inventory\\ItemAssignmentController')
+ 4 SYSTEMPATH\CodeIgniter.php(887): class_exists('\\App\\Controllers\\Inventory\\ItemAssignmentController', true)
+ 5 SYSTEMPATH\CodeIgniter.php(496): CodeIgniter\CodeIgniter->startController()
+ 6 SYSTEMPATH\CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+INFO - 2024-09-01 01:11:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:12:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:12:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:12:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:13:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:13:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:13:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:13:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2024-09-01 01:13:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
