@@ -81,7 +81,7 @@ class TransactionsController extends BaseController
 
 public function edit()
 {
-    $data['title'] = 'Edit Assigned To';
+    $data['title'] = 'Edit Transaction';
     helper('form');
 	
     $transactionModel = new TransactionsModel();

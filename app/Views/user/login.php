@@ -1,8 +1,10 @@
 <?= $this->extend('layouts/main') ?>
 
 <?= $this->section('content') ?>
-            <div class="card" style="width: 20rem;">
+<div class="container mt-4">
+    <div class="card mx-auto shadow-lg" style="max-width: 20rem;">
                 <div class="card-body">
+				<h1><center>Login</center></h1>
                 <form method="post" action="<?= site_url('user/login') ?>">
                     <div>
                
@@ -33,6 +35,7 @@
                     </div>
                 </form>  
                 </div>
+            </div>
             </div>
 
 <?= $this->endSection() ?>

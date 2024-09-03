@@ -64,7 +64,7 @@ class ItemLocations extends BaseController
 
 public function edit()
 {
-    $data['title'] = 'Edit Items';
+    $data['title'] = 'Edit Location';
     helper('form');
     $itemLocModel = new ItemLocationsModel();
     $itemModel = new InvItemsModel();

@@ -5,7 +5,7 @@
 <div class="container mt-4">
     <div class="card mx-auto shadow-lg" style="max-width: 50rem;">
         <div class="card-body">
-            <h1 class="mb-4">Edit Assigned To</h1>
+            <h1 class="mb-4">Edit Transaction</h1>
 
             <?php if (isset($validation)): ?>
                 <div class="alert alert-danger">
@@ -82,7 +82,7 @@
                 </div>
 
                 <div class="d-flex justify-content-center mt-4">
-                    <button class="btn btn-success me-2" type="submit">Save Changes</button>
+                    <button class="btn btn-success me-2" type="submit">Save Changes</button> &nbsp;
                     <a class="btn btn-danger" href="<?= site_url('inventory/transactions') ?>">Cancel</a>
                 </div>
             </form>
