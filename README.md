@@ -4,7 +4,7 @@
 This project is a requirement for the completion of the training. It focuses on developing an Inventory System Module for AIS. The project utilizes the Model-View-Controller (MVC) architecture of CodeIgniter and incorporates Bootstrap as the main CSS framework for templating.
 
 
-#Inventory System Module of Academic Information System
+# Inventory System Module of Academic Information System
 ## Technical Aspects and Overview
 The Inventory System Module is structured to cover various components critical to inventory management:
 •	Users: This section handles user management, listing employees and managing user accounts.
