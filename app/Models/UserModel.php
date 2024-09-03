@@ -35,7 +35,7 @@ class UserModel extends Model
 		return $this->findAll();
 	}
 	
-public function countAllUsers()
+	public function countAllUsers()
     {
         return $this->countAll();
     }

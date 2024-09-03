@@ -17,14 +17,14 @@ class InvCategoriesModel extends Model
         'description' => 'permit_empty|string'
     ];
 	
-	
+	//retrieves all the result
 		public function getAllCategories()
     {
         return $this->findAll();
     }
 	
 	
-	
+	//This method is typically used to get a summary of how many items are in each category for display in a report or dashboard.
 	  public function getCategoryItemCounts()
     {
         return $this->select('inv_categories.name, COUNT(inv_items.id) as item_count')
@@ -32,4 +32,5 @@ class InvCategoriesModel extends Model
                     ->groupBy('inv_categories.id')
                     ->findAll();
     }
+	// findAll(): Executes the constructed query and retrieves all the results as an array of associative arrays. Each array represents a row in the result set, containing the category name and the item count.
 }

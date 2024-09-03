@@ -18,15 +18,17 @@ class AuthController extends BaseController
 		
 		$model = new InvCategoriesModel();
         $data['categories'] = $model->getCategoryItemCounts();
-		
+		// dd($data['categories'] );
 		$userModel = new UserModel();
-            // Get user count
+         // Get user count
         $data['countUser'] = $userModel->countAllUsers();
+		// data($data['countUser']);
+		
 		
 		$transactionModel = new TransactionsModel();
             
         $data['countTransaction'] = $transactionModel->countAllTransaction();
-		 
+		// dd($data['countTransaction']); 
 		
 		$itemAssignment=new ItemAssignmentsModel();
 		$data['assignmentStatus']=$itemAssignment->countAssignmentStatus();	

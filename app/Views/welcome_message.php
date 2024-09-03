@@ -80,11 +80,11 @@
         <ul class="navbar-nav ml-auto">
              <?php if (!session()->get('isLoggedIn')): ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="/login"><i class="fas fa-sign-in-alt"></i> Login</a>
+                    <a class="nav-link" href="<?= base_url();?>user/login"><i class="fas fa-sign-in-alt"></i> Login</a>
                 </li>
             <?php else: ?>
                 <li class="nav-item">
-                    <a class="nav-link" href="/dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                    <a class="nav-link" href="<?= base_url(); ?>dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
                 </li>
             <?php endif; ?>
         </ul>
