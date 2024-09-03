@@ -94,8 +94,8 @@
 <!-- HEADER: HERO SECTION -->
 <header class="hero">
     <div class="container">
-        <h1>🎓 CodeIgniter 4 Framework</h1>
-        <h2>📚 Training for Trainers on PHP Web Application Framework: CodeIgniter</h2><br/>
+        <h1 class="mt-4">🎓 CodeIgniter 4 Framework</h1>
+        <h2>📚 Training for Trainers on PHP Web Application Framework: CodeIgniter</h2><hr/>
 		<p>Welcome to the Inventory System Module for AIS! This project is part of the training program, focusing on building a robust and scalable inventory management system using the Model-View-Controller (MVC) architecture of CodeIgniter, with Bootstrap as the main CSS framework for beautiful and responsive designs.
 
 </p>
