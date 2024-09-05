@@ -71,7 +71,7 @@ class User extends BaseController
 
     public function add()
     {
-		 $data['title'] = 'Add User';
+		$data['title'] = 'Add User';
         helper('form');
         $UserModel=new \App\Models\UserModel();
       

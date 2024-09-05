@@ -15,7 +15,7 @@ class AuthController extends BaseController
     {
 		$data['title']='Dashboard'; //for dynamic title
 		
-		
+		 
 		$model = new InvCategoriesModel();
         $data['categories'] = $model->getCategoryItemCounts();
 		// dd($data['categories'] );
